@@ -1,6 +1,6 @@
 # 项目文件范例说明
 
-本目录下的示例文件位于 [`examples/flutter_ipa_ci`](../examples/flutter_ipa_ci)。它们是从真实项目结构中抽象出的“骨架”，不是业务代码。
+本目录下的示例文件位于 [`examples/flutter_ipa_ci`](../examples/flutter_ipa_ci)。它们是从真实项目结构中抽象出的最小 Flutter iOS 项目，包含一个只做加减乘除的计算器 demo。
 
 ## `.github/workflows/release-ios-unsigned.yml`
 
@@ -27,7 +27,7 @@
 
 ## `pubspec.yaml`
 
-最小 Flutter App 配置。真实项目可以加入自己的依赖，例如：
+最小 Flutter App 配置。示例项目可以直接执行 `flutter pub get`、`flutter test`，也可以通过 GitHub Actions 编译 iOS IPA。真实项目可以加入自己的依赖，例如：
 
 ```yaml
 dependencies:
@@ -40,11 +40,11 @@ dependencies:
 
 ## `lib/main.dart`
 
-最小 UI，仅用于证明项目可编译。
+最小计算器 UI，仅用于证明项目可以一键测试并通过 GitHub Actions 编译为 IPA。
 
 ## `ios/Runner/Info.plist.example`
 
-只提供片段说明。真实项目应由 `flutter create` 生成完整 iOS 工程，再按需修改 Display Name、URL Schemes、权限说明等。
+示例项目已经包含由 `flutter create --platforms=ios` 生成的完整 iOS 工程。真实项目仍应按需修改 Display Name、URL Schemes、权限说明等。
 
 ## `.gitignore`
 

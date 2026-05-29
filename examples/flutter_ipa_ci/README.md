@@ -1,18 +1,23 @@
-# Flutter IPA CI Example
+# Flutter IPA CI Calculator Demo
 
-这是一个最小 Flutter 项目骨架，用于展示如何组织 GitHub Actions 以构建 iOS IPA。
+This is a minimal Flutter calculator app used to prove that a project can be built into an iOS `.ipa` by GitHub Actions without using a local Mac.
 
-实际使用时建议：
+The app intentionally has only one feature: add, subtract, multiply, and divide two numbers.
 
-1. 用 `flutter create your_app` 生成完整项目。
-2. 复制 `.github/workflows/` 中的 workflow。
-3. 按需参考本目录中的 `pubspec.yaml`、`.gitignore` 和 `lib/main.dart`。
-4. 不要直接把本示例当成完整可运行 iOS 工程，因为这里没有提交完整 `ios/Runner.xcodeproj`。
-
-如果你希望示例项目完整可编译，请在本目录运行：
+## Run Locally
 
 ```bash
-flutter create --platforms=ios .
+flutter pub get
+flutter test
+flutter run
 ```
 
-然后提交 Flutter 生成的 iOS 工程文件。
+## Build an Unsigned IPA in GitHub Actions
+
+Copy this demo to the root of a GitHub repository, keep `.github/workflows/release-ios-unsigned.yml`, and push either:
+
+- a tag, such as `v0.1.0`
+- the `test` branch
+- a manual `workflow_dispatch` run
+
+The unsigned IPA will be uploaded as the `ios_unsigned_ipa` artifact.
