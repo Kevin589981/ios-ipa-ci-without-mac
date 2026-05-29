@@ -1,0 +1,17 @@
+# Repository-level ignores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Generated archives
+*.zip
+*.ipa
+
+# Never commit signing material
+*.p12
+*.cer
+*.mobileprovision
+*.provisionprofile
+*.pem
+*.key
