@@ -1,5 +1,7 @@
 # iOS IPA CI Without Mac
 
+[English README](README.en.md)
+
 这是一份从实际 Flutter iOS CI 项目经验中抽象出来的指南：在**没有个人 Mac 电脑**的前提下，使用 GitHub Actions 的 `macos-*` runner，把 Flutter 源代码项目编译成 `.ipa`。
 
 本仓库只包含通用文档和可复用范例，不包含任何原项目业务源码、证书、私钥或真实 Bundle ID。
