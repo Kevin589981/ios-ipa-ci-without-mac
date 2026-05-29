@@ -45,6 +45,18 @@ find Payload/Runner.app/Frameworks -type d -name "*.framework" -exec codesign --
 3. 选择对应 workflow run。
 4. 在 Artifacts 下载 `ios_unsigned_ipa`。
 
+也可以用 GitHub CLI 直接下载到当前目录：
+
+```bash
+gh run download <run_id> -n ios_outputs -D .
+```
+
+如果使用本仓库 demo workflow，artifact 名称是 `ios_unsigned_ipa`：
+
+```bash
+gh run download <run_id> -n ios_unsigned_ipa -D .
+```
+
 ## 验证产物内容
 
 IPA 本质是 zip：

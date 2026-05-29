@@ -41,6 +41,18 @@ git push origin v0.1.0
 
 4. Open the GitHub Actions run and download the `ios_unsigned_ipa` artifact.
 
+You can also download an artifact directly with GitHub CLI:
+
+```bash
+gh run download <run_id> -n ios_outputs -D .
+```
+
+For the demo workflow in this repository, the artifact is named `ios_unsigned_ipa`, so the command is:
+
+```bash
+gh run download <run_id> -n ios_unsigned_ipa -D .
+```
+
 ## Important Limitations
 
 - GitHub Actions macOS runners are temporary cloud Macs. This does not bypass Apple's iOS toolchain requirements.

@@ -39,6 +39,18 @@ git push origin v0.1.0
 
 4. 在 GitHub Actions 的构建结果里下载 `ios_unsigned_ipa` artifact。
 
+也可以用 GitHub CLI 直接下载 artifact：
+
+```bash
+gh run download <run_id> -n ios_outputs -D .
+```
+
+本仓库 demo workflow 的 artifact 名称是 `ios_unsigned_ipa`，所以对应命令是：
+
+```bash
+gh run download <run_id> -n ios_unsigned_ipa -D .
+```
+
 ## 重要限制
 
 - GitHub Actions 的 macOS runner 等价于“临时云端 Mac”，不是绕过 Apple 工具链。
